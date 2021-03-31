@@ -24,7 +24,7 @@ deploy:
 		# Checking whether the container is up and if not starting it, else restarting
 		ssh $(noinetip) -l $(user) 'sudo /tmp/bugdoc.sh'
 
-# Installing Nginx as on the remote host without Internet access		
+# Installing Nginx on the remote host without Internet access		
 nginx:
 		# Download Nginx packages and dependencies
 		sudo apt install -y --download-only nginx
@@ -63,5 +63,5 @@ cron:
 
 # Cron job for alt_sync task
 alt_cron:		
-		# Cron job for alt_sync
+		# Cron job for the alt_sync task
 		sudo grep '$(user) /usr/bin/make alt_sync' /var/spool/cron/crontabs/$(user) || crontab -u $(user) -l | { sudo cat; sudo echo "45 3 * * sat $(user) /usr/bin/make alt_sync user=$(user) noinetip=$(noinetip)"; } | crontab -

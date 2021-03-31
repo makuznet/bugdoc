@@ -54,6 +54,8 @@ This is because of Docker as Dockerfile operates with relative paths to build a 
 cd ~/bugdoc 
 make sync deploy cron user=<your_username> noinetip=<no_inet ip addr>
 ```
+`user` — `user`@10.0.2.14  
+`noinet` — user@`10.0.2.14`  
 `cron` will add a job to run this command on a weekly basis.
 
 ### To have just one language run:
