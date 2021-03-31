@@ -152,13 +152,13 @@ Download a static web site content:
 ```shell
 sudo wget -P ~/bugdoc/bugs/ --reject-regex='\w*@\w*.\w*.\w{3}' -e robots=off -nd -m -np https://www....
 ```
--P — prefix, set a dir to save files to
---regect-regex — regular expression excluding some links from being mirrored
-'\w*@\w*.\w*.\w{3}' — user@example.domain.com
--e robots=off — do not include robots.tx file when mirroring
--nd — do not repeat web site dirs hierarchy
--m — mirror, recursive download provided a file has links inside
--np — no parents, don't ascent higher in web site dirs hierarchy then stated
+-P — prefix, set a dir to save files to  
+--regect-regex — regular expression excluding some links from being mirrored  
+'\w*@\w*.\w*.\w{3}' — user@example.domain.com  
+-e robots=off — do not include robots.tx file when mirroring  
+-nd — do not repeat web site dirs hierarchy  
+-m — mirror, recursive download provided a file has links inside  
+-np — no parents, don't ascent higher in web site dirs hierarchy then stated  
 
 
 Make a list of files in some dir with Vim:
