@@ -52,14 +52,14 @@ This is because of Docker as Dockerfile operates with relative paths to build a 
 ### To mirror the site and start (restart) the Docker container with the mirrored content on the `noinet` host:
 ```shell
 cd ~/bugdoc 
-make sync deploy cron -f ~/bugdoc/makefile user=<your_username> noinetip=<no_inet ip addr>
+make sync deploy cron user=<your_username> noinetip=<no_inet ip addr>
 ```
 `cron` will add a job to run this command on a weekly basis.
 
 ### To mirror just one language and start (restart) the Docker container:
 ```shell
 cd ~/bugdoc
-make sync_lang deploy -f ~/bugdoc/makefile user=<your_username> noinetip=<no_inet ip addr> lang=bugs-ru
+make sync_lang deploy user=<your_username> noinetip=<no_inet ip addr> lang=bugs-ru
 ```
 `lang=`  
 English: bugs  
@@ -69,11 +69,11 @@ Languages available: bugs-(br, ch, cz, da, de, es, fr, hu, it, jp, nl, pl, ru, t
 ### As an alternative to Docker
 #### Install Nginx web server on `noinet` host:
 ```shell
-make nginx -f ~/bugdoc/makefile user=<your_username> noinetip=<no_inet ip addr>
+make nginx user=<your_username> noinetip=<no_inet ip addr>
 ```
 #### And update the mirrored content:
 ```shell
-make alt_sync alt_cron -f ~/bugdoc/makefile user=<your_username> noinetip=<no_inet ip addr>
+make alt_sync alt_cron user=<your_username> noinetip=<no_inet ip addr>
 ```
 `alt_cron` will add a job to run this command on a weekly basis.
 
