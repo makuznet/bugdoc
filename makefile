@@ -3,11 +3,11 @@
 # Mirroring the documentation
 sync:
 		# Mirroring the site content
-		sudo wget -P ~/bugdoc/bugs/ --reject-regex='\w*@\w*.\w*.\w{3}' -e robots=off -nd -m -np https://www.chiark.greenend.org.uk/~sgtatham/bugs.html
+		wget -P ~/bugdoc/bugs/ --reject-regex='\w*@\w*.\w*.\w{3}' -e robots=off -nd -m -np https://www.chiark.greenend.org.uk/~sgtatham/bugs.html
 
 # Mirroring the Documentation in some language
 sync_lang:
-		sudo wget -P ~/bugdoc/bugs/ -nd -np https://www.chiark.greenend.org.uk/~sgtatham/$(lang).html
+		wget -P ~/bugdoc/bugs/ -nd -np https://www.chiark.greenend.org.uk/~sgtatham/$(lang).html
 
 # Rolling out Docker based Nginx with the documentation
 deploy:	
@@ -46,9 +46,9 @@ nginx:
 # Updating the content of Nginx
 alt_sync:
 		# Mirroring the docs
-		sudo make sync
+		make sync
 		# Making a tar file
-		sudo tar -czvf /tmp/bugs.tar.gz -C ~/bugdoc/bugs .
+		tar -czvf /tmp/bugs.tar.gz -C ~/bugdoc/bugs .
 		# Conveying
 		scp /tmp/nginx.tar.gz $(user)@$(noinetip):/tmp
 		# Unarchiving and copying
