@@ -82,7 +82,7 @@ make alt_sync alt_cron -f ~/bugdoc/makefile user=<your_username> noinetip=<no_in
 You will get `~/bugdoc` dir, where all the repo files are.
 
 ```shell
-git clone https://gitlab.rebrainme.com/devops_users_repos/1976/ansible-vault
+git clone https://github.com/makuznet/bugdoc
 ```
 
 ## Commands and Keys
