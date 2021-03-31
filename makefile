@@ -7,7 +7,7 @@ sync:
 
 # Mirroring the Documentation in some language
 sync_lang:
-		wget -P ~/bugdoc/bugs/ -nd -np https://www.chiark.greenend.org.uk/~sgtatham/$(lang).html
+		wget -P ~/bugdoc/bugs/ -nd -np -N https://www.chiark.greenend.org.uk/~sgtatham/$(lang).html
 
 # Rolling out Docker based Nginx with the documentation
 deploy:	

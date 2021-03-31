@@ -56,10 +56,10 @@ make sync deploy cron user=<your_username> noinetip=<no_inet ip addr>
 ```
 `cron` will add a job to run this command on a weekly basis.
 
-### To mirror just one language and start (restart) the Docker container:
+### To have just one language run:
 ```shell
 cd ~/bugdoc
-make sync_lang deploy user=<your_username> noinetip=<no_inet ip addr> lang=bugs-ru
+make sync_lang lang=bugs-ru
 ```
 `lang=`  
 English: bugs  
@@ -159,7 +159,7 @@ sudo wget -P ~/bugdoc/bugs/ --reject-regex='\w*@\w*.\w*.\w{3}' -e robots=off -nd
 -nd — do not repeat web site dirs hierarchy  
 -m — mirror, recursive download provided a file has links inside  
 -np — no parents, don't ascent higher in web site dirs hierarchy then stated  
-
+-N — It enables time-stamping, which re-downloads the file only if its newer on the server
 
 Make a list of files in some dir with Vim:
 ```shell
