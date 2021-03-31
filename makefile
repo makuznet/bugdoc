@@ -58,8 +58,10 @@ alt_sync:
 
 # Cron job for deploy task
 cron:
+		# Cron job for the deploy task
 		sudo grep '$(user) /usr/bin/make sync deploy' /var/spool/cron/crontabs/$(user) || crontab -u $(user) -l | { sudo cat; sudo echo "45 3 * * sat $(user) /usr/bin/make sync deploy user=$(user) noinetip=$(noinetip)"; } | crontab -
 
 # Cron job for alt_sync task
 alt_cron:		
+		# Cron job for alt_sync
 		sudo grep '$(user) /usr/bin/make alt_sync' /var/spool/cron/crontabs/$(user) || crontab -u $(user) -l | { sudo cat; sudo echo "45 3 * * sat $(user) /usr/bin/make alt_sync user=$(user) noinetip=$(noinetip)"; } | crontab -
