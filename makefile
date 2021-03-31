@@ -58,8 +58,8 @@ alt_sync:
 
 # Cron job for deploy task
 cron:
-		sudo grep 'root /usr/bin/make sync deploy' /var/spool/cron/crontabs/root || sudo crontab -u root -l | { sudo cat; sudo echo "45 3 * * sat root /usr/bin/make sync deploy -f ~/bugdoc/makefile user=makuznet noinetip=10.0.2.14"; } | sudo crontab -
+		sudo grep '$(user) /usr/bin/make sync deploy' /var/spool/cron/crontabs/$(user) || crontab -u $(user) -l | { sudo cat; sudo echo "45 3 * * sat $(user) /usr/bin/make sync deploy user=$(user) noinetip=$(noinetip)"; } | crontab -
 
 # Cron job for alt_sync task
-alt_cron:
-		sudo grep 'root /usr/bin/make alt_sync' /var/spool/cron/crontabs/root || sudo crontab -u root -l | { sudo cat; sudo echo "45 3 * * sat root /usr/bin/make alt_sync -f ~/bugdoc/makefile user=makuznet noinetip=10.0.2.14"; } | sudo crontab -		
+alt_cron:		
+		sudo grep '$(user) /usr/bin/make sync deploy' /var/spool/cron/crontabs/$(user) || crontab -u $(user) -l | { sudo cat; sudo echo "45 3 * * sat $(user) /usr/bin/make alt_sync user=$(user) noinetip=$(noinetip)"; } | crontab -
