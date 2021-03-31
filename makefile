@@ -48,7 +48,7 @@ alt_sync:
 		# Mirroring the docs
 		make sync
 		# Making a tar file
-		tar -czvf /tmp/bugs.tar.gz -C ~/bugdoc/bugs .
+		sudo tar -czvf /tmp/bugs.tar.gz -C ~/bugdoc/bugs .
 		# Conveying
 		scp /tmp/nginx.tar.gz $(user)@$(noinetip):/tmp
 		# Unarchiving and copying
